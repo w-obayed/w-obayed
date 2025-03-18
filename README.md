@@ -29,4 +29,4 @@
 <p><img width="400px" height="290px" align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=w-obayed&show_icons=true&locale=en&layout=compact" alt="w-obayed" /></p>
 <p><img align="center" src="https://github-readme-stats.vercel.app/api?username=w-obayed&show_icons=true&theme=radical" alt="w-obayed"/> </p>
 
-<p><img align="left" src="https://github-readme-streak-stats.herokuapp.com/?user=w-obayed&" alt="w-obayed" /></p>
+
