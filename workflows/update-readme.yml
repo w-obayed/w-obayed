@@ -1,0 +1,84 @@
+name: Update README with Repositories
+
+on:
+  schedule:
+    # Runs every day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Fetch and update repositories
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            // Fetch all repositories
+            const repos = await github.rest.repos.listForUser({
+              username: 'w-obayed',
+              sort: 'updated',
+              per_page: 100
+            });
+            
+            // Filter out forks if you want only original repos
+            const filteredRepos = repos.data.filter(repo => !repo.fork);
+            
+            // Sort by stars
+            filteredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+            
+            // Generate markdown for repositories
+            let repoMarkdown = '\n';
+            
+            for (const repo of filteredRepos.slice(0, 20)) { // Top 20 repos
+              const lang = repo.language || 'N/A';
+              const stars = repo.stargazers_count;
+              const forks = repo.forks_count;
+              const desc = repo.description || 'No description provided';
+              
+              repoMarkdown += `### 📦 [${repo.name}](${repo.html_url})\n`;
+              repoMarkdown += `${desc}\n\n`;
+              repoMarkdown += `![Language](https://img.shields.io/badge/Language-${lang}-blue) `;
+              repoMarkdown += `![Stars](https://img.shields.io/github/stars/w-obayed/${repo.name}?style=social) `;
+              repoMarkdown += `![Forks](https://img.shields.io/github/forks/w-obayed/${repo.name}?style=social)\n\n`;
+            }
+            
+            // Read current README
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+            
+            // Replace content between markers
+            const startMarker = '<!-- REPO-LIST:START -->';
+            const endMarker = '<!-- REPO-LIST:END -->';
+            const startIndex = readme.indexOf(startMarker);
+            const endIndex = readme.indexOf(endMarker);
+            
+            if (startIndex !== -1 && endIndex !== -1) {
+              readme = readme.substring(0, startIndex + startMarker.length) +
+                       repoMarkdown +
+                       readme.substring(endIndex);
+              
+              fs.writeFileSync(readmePath, readme);
+            }
+            
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repositories" && git push)
