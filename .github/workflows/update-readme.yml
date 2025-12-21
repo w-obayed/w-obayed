@@ -1,0 +1,105 @@
+name: Update README with Repositories
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Fetch and update repositories
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            const repos = await github.rest.repos.listForUser({
+              username: 'w-obayed',
+              sort: 'updated',
+              per_page: 100
+            });
+            
+            console.log(`Found ${repos.data.length} repositories`);
+            
+            const filteredRepos = repos.data.filter(repo => !repo.fork && repo.name !== 'w-obayed');
+            
+            filteredRepos.sort((a, b) => {
+              if (b.stargazers_count !== a.stargazers_count) {
+                return b.stargazers_count - a.stargazers_count;
+              }
+              return new Date(b.updated_at) - new Date(a.updated_at);
+            });
+            
+            let repoMarkdown = '\n<div align="center">\n\n';
+            
+            const maxRepos = Math.min(filteredRepos.length, 20);
+            
+            for (let i = 0; i < maxRepos; i++) {
+              const repo = filteredRepos[i];
+              const lang = repo.language || 'Code';
+              const desc = repo.description || 'No description provided';
+              
+              repoMarkdown += `### 📦 [${repo.name}](${repo.html_url})\n\n`;
+              repoMarkdown += `${desc}\n\n`;
+              repoMarkdown += `<p>\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/badge/Language-${encodeURIComponent(lang)}-blue?style=flat-square" alt="Language">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/stars/w-obayed/${repo.name}?style=flat-square" alt="Stars">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/forks/w-obayed/${repo.name}?style=flat-square" alt="Forks">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/last-commit/w-obayed/${repo.name}?style=flat-square" alt="Last Commit">\n`;
+              repoMarkdown += `</p>\n\n`;
+              repoMarkdown += `---\n\n`;
+            }
+            
+            repoMarkdown += `</div>\n\n`;
+            repoMarkdown += `*Last updated: ${new Date().toUTCString()}*\n`;
+            
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+            
+            const startMarker = '<!-- REPO-LIST:START -->';
+            const endMarker = '<!-- REPO-LIST:END -->';
+            const startIndex = readme.indexOf(startMarker);
+            const endIndex = readme.indexOf(endMarker);
+            
+            if (startIndex !== -1 && endIndex !== -1) {
+              readme = readme.substring(0, startIndex + startMarker.length) +
+                       repoMarkdown +
+                       readme.substring(endIndex);
+              
+              fs.writeFileSync(readmePath, readme);
+              console.log('README updated successfully!');
+            } else {
+              console.error('Could not find markers in README.md');
+            }
+            
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Update README with latest repositories"
+            git push
+          fi
