@@ -40,7 +40,271 @@
 ## 🚀 My Repositories
 
 <!-- REPO-LIST:START -->
-<!-- This section will be automatically updated by GitHub Actions -->
+<div align="center">
+
+### 📦 [interview-server](https://github.com/w-obayed/interview-server)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/interview-server?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/interview-server?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/interview-server?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [interview-client](https://github.com/w-obayed/interview-client)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/interview-client?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/interview-client?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/interview-client?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [dashboard](https://github.com/w-obayed/dashboard)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/dashboard?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/dashboard?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/dashboard?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [obayed-email](https://github.com/w-obayed/obayed-email)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/obayed-email?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/obayed-email?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/obayed-email?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [hulu](https://github.com/w-obayed/hulu)
+
+hulu website
+
+<p>
+  <img src="https://img.shields.io/badge/Language-CSS-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/hulu?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/hulu?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/hulu?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [chat-code](https://github.com/w-obayed/chat-code)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/chat-code?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/chat-code?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/chat-code?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [app-obayed](https://github.com/w-obayed/app-obayed)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/app-obayed?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/app-obayed?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/app-obayed?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [ats](https://github.com/w-obayed/ats)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/ats?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/ats?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/ats?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [obayed](https://github.com/w-obayed/obayed)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/obayed?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/obayed?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/obayed?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [auth-login](https://github.com/w-obayed/auth-login)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/auth-login?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/auth-login?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/auth-login?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [ABS-setup](https://github.com/w-obayed/ABS-setup)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-HTML-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/ABS-setup?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/ABS-setup?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/ABS-setup?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [popup-responsive-design](https://github.com/w-obayed/popup-responsive-design)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-CSS-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/popup-responsive-design?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/popup-responsive-design?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/popup-responsive-design?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [facebook-page](https://github.com/w-obayed/facebook-page)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/facebook-page?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/facebook-page?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/facebook-page?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [twitter-login-page](https://github.com/w-obayed/twitter-login-page)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-Code-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/twitter-login-page?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/twitter-login-page?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/twitter-login-page?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [json-server](https://github.com/w-obayed/json-server)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-Code-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/json-server?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/json-server?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/json-server?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [instagram-login-page](https://github.com/w-obayed/instagram-login-page)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/instagram-login-page?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/instagram-login-page?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/instagram-login-page?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [todo-app](https://github.com/w-obayed/todo-app)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/todo-app?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/todo-app?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/todo-app?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [blog-post](https://github.com/w-obayed/blog-post)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/blog-post?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/blog-post?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/blog-post?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [popup](https://github.com/w-obayed/popup)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-CSS-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/popup?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/popup?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/popup?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+### 📦 [express_ejs_backend_student](https://github.com/w-obayed/express_ejs_backend_student)
+
+No description provided
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-blue?style=flat-square" alt="Language">
+  <img src="https://img.shields.io/github/stars/w-obayed/express_ejs_backend_student?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/w-obayed/express_ejs_backend_student?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/last-commit/w-obayed/express_ejs_backend_student?style=flat-square" alt="Last Commit">
+</p>
+
+---
+
+</div>
+
+*Last updated: Sun, 21 Dec 2025 20:58:45 GMT*
 <!-- REPO-LIST:END -->
 
 ---
