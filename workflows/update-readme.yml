@@ -9,21 +9,26 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           
       - name: Fetch and update repositories
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -36,27 +41,42 @@ jobs:
               per_page: 100
             });
             
-            // Filter out forks if you want only original repos
-            const filteredRepos = repos.data.filter(repo => !repo.fork);
+            console.log(`Found ${repos.data.length} repositories`);
             
-            // Sort by stars
-            filteredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+            // Filter out forks if you want only original repos
+            const filteredRepos = repos.data.filter(repo => !repo.fork && repo.name !== 'w-obayed');
+            
+            // Sort by stars, then by updated date
+            filteredRepos.sort((a, b) => {
+              if (b.stargazers_count !== a.stargazers_count) {
+                return b.stargazers_count - a.stargazers_count;
+              }
+              return new Date(b.updated_at) - new Date(a.updated_at);
+            });
             
             // Generate markdown for repositories
-            let repoMarkdown = '\n';
+            let repoMarkdown = '\n<div align="center">\n\n';
             
-            for (const repo of filteredRepos.slice(0, 20)) { // Top 20 repos
-              const lang = repo.language || 'N/A';
-              const stars = repo.stargazers_count;
-              const forks = repo.forks_count;
+            const maxRepos = Math.min(filteredRepos.length, 20);
+            
+            for (let i = 0; i < maxRepos; i++) {
+              const repo = filteredRepos[i];
+              const lang = repo.language || 'Code';
               const desc = repo.description || 'No description provided';
               
-              repoMarkdown += `### 📦 [${repo.name}](${repo.html_url})\n`;
+              repoMarkdown += `### 📦 [${repo.name}](${repo.html_url})\n\n`;
               repoMarkdown += `${desc}\n\n`;
-              repoMarkdown += `![Language](https://img.shields.io/badge/Language-${lang}-blue) `;
-              repoMarkdown += `![Stars](https://img.shields.io/github/stars/w-obayed/${repo.name}?style=social) `;
-              repoMarkdown += `![Forks](https://img.shields.io/github/forks/w-obayed/${repo.name}?style=social)\n\n`;
+              repoMarkdown += `<p>\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/badge/Language-${encodeURIComponent(lang)}-blue?style=flat-square" alt="Language">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/stars/w-obayed/${repo.name}?style=flat-square" alt="Stars">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/forks/w-obayed/${repo.name}?style=flat-square" alt="Forks">\n`;
+              repoMarkdown += `  <img src="https://img.shields.io/github/last-commit/w-obayed/${repo.name}?style=flat-square" alt="Last Commit">\n`;
+              repoMarkdown += `</p>\n\n`;
+              repoMarkdown += `---\n\n`;
             }
+            
+            repoMarkdown += `</div>\n\n`;
+            repoMarkdown += `*Last updated: ${new Date().toUTCString()}*\n`;
             
             // Read current README
             const readmePath = 'README.md';
@@ -74,6 +94,9 @@ jobs:
                        readme.substring(endIndex);
               
               fs.writeFileSync(readmePath, readme);
+              console.log('README updated successfully!');
+            } else {
+              console.error('Could not find markers in README.md');
             }
             
       - name: Commit and push if changed
@@ -81,4 +104,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repositories" && git push)
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Update README with latest repositories"
+            git push
+          fi
