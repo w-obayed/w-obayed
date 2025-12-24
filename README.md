@@ -24,19 +24,6 @@
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=w-obayed&show_icons=true&theme=radical" alt="w-obayed" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs?username=w-obayed&show_icons=true&locale=en&layout=compact&theme=radical" alt="w-obayed" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=w-obayed&theme=radical" alt="w-obayed" />
-</p>
-
----
-
 ## 🚀 My Repositories
 
 <!-- REPO-LIST:START -->
